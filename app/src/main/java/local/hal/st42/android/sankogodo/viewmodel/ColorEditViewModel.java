@@ -96,7 +96,7 @@ public class ColorEditViewModel extends AndroidViewModel {
     }
 
     /**
-     * レポート情報削除メソッド。
+     * カラー情報削除メソッド。
      *
      * @param id 削除対象レポートの主キー値。
      * @return 削除件数。削除に失敗した場合は0。

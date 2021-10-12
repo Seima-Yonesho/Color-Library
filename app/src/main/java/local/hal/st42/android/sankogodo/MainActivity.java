@@ -142,9 +142,9 @@ public class MainActivity extends AppCompatActivity {
      * @param view 画面部品。
      */
     public void onFabAddClicked(View view) {
-//        Intent intent = new Intent(getApplicationContext(), ReportEditActivity.class);
-//        intent.putExtra("mode", Consts.MODE_INSERT);
-//        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), ColorEditActivity.class);
+        intent.putExtra("mode", Consts.MODE_INSERT);
+        startActivity(intent);
     }
 
     /**
@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
             holder._tvRowTitle.setText(item.colorcode);
             holder._btRowEdit.setTag(item.id);
             holder._btRowEdit.setOnClickListener(new OnEditButtonClickListener());
-            holder._tvRowDate.setBackgroundColor(Color.parseColor("#" + item.colorcode));
+            holder._tvRowDate.setBackgroundColor(Color.parseColor(String.valueOf(item.colorcode)));
             LinearLayout row = (LinearLayout) holder._tvRowTitle.getParent().getParent();
             row.setTag(item.id);
         }
@@ -275,13 +275,12 @@ public class MainActivity extends AppCompatActivity {
     private class OnEditButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view){
-//            Button btRowEdit = (Button) view;
-//            int idNo = (Integer) btRowEdit.getTag();
-//            Intent intent = new Intent(getApplicationContext(), ReportEditActivity.class);
-//            intent.putExtra("mode", Consts.MODE_EDIT);
-//            intent.putExtra("idNo", idNo);
-//            intent.putExtra("activity", Consts.MainActivity);
-//            startActivity(intent);
+            Button btRowEdit = (Button) view;
+            int idNo = (Integer) btRowEdit.getTag();
+            Intent intent = new Intent(getApplicationContext(), ColorEditActivity.class);
+            intent.putExtra("mode", Consts.MODE_EDIT);
+            intent.putExtra("idNo", idNo);
+            startActivity(intent);
         }
     }
 }
